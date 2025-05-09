@@ -1,0 +1,14 @@
+<!-- templates/oficina.html -->
+{% extends "base.html" %}
+
+{% block title %}Detalle de {{ oficina.nombre }}{% endblock %}
+
+{% block contenido %}
+<h2>Detalles de {{ oficina.nombre }}</h2>
+<ul class="list-group mb-3">
+  <li class="list-group-item"><strong>Dirección:</strong> {{ oficina.direccion }}</li>
+  <li class="list-group-item"><strong>Teléfono:</strong> {{ oficina.telefono }}</li>
+</ul>
+<a href="{% url 'base:oficinas' %}" class="btn btn-secondary">Volver a la lista</a>
+
+{% endblock %}

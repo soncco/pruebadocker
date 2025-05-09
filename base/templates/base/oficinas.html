@@ -1,8 +1,19 @@
-{% extends 'base/base.html' %} {% block contenido %}
+<!-- templates/oficinas.html -->
+{% extends "base.html" %}
 
-<ul>
+{% block title %}Lista de Oficinas{% endblock %}
+
+{% block contenido %}
+<h1 class="mb-4">Lista de Oficinas</h1>
+<ul class="list-group">
   {% for oficina in oficinas %}
-  <li>{{ oficina.nombre }}</li>
+    <li class="list-group-item">
+      <a href="{% url 'base:detalle_oficina' oficina.id %}" class="text-decoration-none">
+        {{ oficina.nombre }}
+      </a>
+    </li>
+  {% empty %}
+    <li class="list-group-item">No hay oficinas registradas.</li>
   {% endfor %}
 </ul>
 {% endblock %}
