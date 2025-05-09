@@ -1,8 +1,17 @@
 {% extends 'base/base.html' %} {% block contenido %}
 
+<h1>Lista de Oficinas</h1>
 <ul>
   {% for oficina in oficinas %}
-  <li>{{ oficina.nombre }}</li>
+    <li>
+      {{ oficina.nombre }} -
+      <a href="{% url 'base:oficina_detalle' oficina.id %}">
+        Ver detalles
+      </a>
+    </li>
+  {% empty %}
+    <li>No hay oficinas disponibles.</li>
   {% endfor %}
 </ul>
+
 {% endblock %}

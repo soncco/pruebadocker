@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %} {% block contenido %}
+
+<h1>Detalles de {{ oficina.nombre }}</h1>
+<ul>
+    <li><strong>Nombre:</strong> {{ oficina.nombre }}</li>
+    <li><strong>Dirección:</strong> {{ oficina.direccion }}</li>
+    <li><strong>Teléfono:</strong> {{ oficina.telefono }}</li>
+</ul>
+
+<a href="{% url 'base:oficinas' %}">← Volver a la lista</a>
+
+{% endblock %}
+
